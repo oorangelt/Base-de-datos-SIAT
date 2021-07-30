@@ -1,7 +1,8 @@
 USE SIA;
 
 CREATE TABLE Vehiculos(
-    Placa VARCHAR(10) PRIMARY KEY NOT NULL,
+    Id_vehiculo VARCHAR(10) PRIMARY KEY NOT NULL,
+    Placa VARCHAR(10) NOT NULL,
     Marca varchar(30) NOT NULL,
     Modelo year NOT NULL,
     Numero_Sillas Int(3) NOT NULL,
@@ -20,6 +21,7 @@ CREATE TABLE Conductor(
     Telefono VARCHAR(20) NOT NULL,
     Email VARCHAR(30) NOT NULL,
     Placa VARCHAR(10) NOT NULL,
+    Id_vehiculo VARCHAR(10),
     
-    FOREIGN KEY(Placa) REFERENCES Vehiculos(Placa)
+    FOREIGN KEY(Id_vehiculo) REFERENCES Vehiculos(Id_vehiculo)
 );
